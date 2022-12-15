@@ -1,0 +1,28 @@
+.container {
+  /* 长度：23个字符 */
+  width: 23ch;
+  /* 两个动画：
+    typing: 长度从0到23ch，两秒进行，分隔成23步
+    blink: 光标闪烁，0.5秒无限交替进行 
+  */
+  animation: typing 2s steps(23), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+/* 最开始为0 */
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+/* 进行一半时，变为透明 */
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
